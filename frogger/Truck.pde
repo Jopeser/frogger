@@ -20,11 +20,6 @@ class Truck extends Rect {
     }
     if (speed < 0) {
       image(texture, this.x, this.y);
-    } else {
-      pushMatrix();
-      scale(-1.0, 1.0);
-      image(texture, -this.x, this.y);
-      popMatrix();
     }
   }
 }

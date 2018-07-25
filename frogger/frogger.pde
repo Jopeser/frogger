@@ -16,7 +16,7 @@ void setup () {
     colliders.add(trucks[i]);
   }
   for (int i = 0; i < trucks2.length; i++) {
-    trucks2[i] = new Truck(i*6*grid, grid*7, 2);
+    trucks2[i] = new Truck(i*6*grid, grid*7, -3);
     colliders.add(trucks2[i]);
   }
 }
