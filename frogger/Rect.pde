@@ -21,7 +21,10 @@ class Rect {
     float oleft = other.x;
     float oright = other.x + other.w;
     
-    return false;
+    return !(left >= oright ||
+      right <= oleft ||
+      top >= obottom ||
+      bottom <= otop);
   }
   
 }
