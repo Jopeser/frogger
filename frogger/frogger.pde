@@ -1,29 +1,47 @@
 int grid = 50;
 Frog frog;
-Truck truck;
 boolean pause = false;
 ArrayList<Rect> colliders = new ArrayList<Rect>();
 
+Truck[] trucks = new Truck[3];
+Truck[] trucks2 = new Truck[2];
+
 void setup () {
   size(550, 550); //11*grid; must be uneven
+  noStroke();
   background(0);
   frog = new Frog();
-  truck = new Truck(grid*2, grid*5, -2);
-  colliders.add(truck);
+  for (int i = 0; i < trucks.length; i++) {
+    trucks[i] = new Truck(i*6*grid, grid*9, -2);
+    colliders.add(trucks[i]);
+  }
+  for (int i = 0; i < trucks2.length; i++) {
+    trucks2[i] = new Truck(i*6*grid, grid*7, 2);
+    colliders.add(trucks2[i]);
+  }
 }
 
 void draw () {
   if (pause)
     return;
   background(0);
+  //safe space
+  fill(50);
+  rect(0, height-grid, width, grid);
   frog.show();
-  truck.show();
+  for (int i = 0; i < trucks.length; i++) {
+    trucks[i].show();
+  }
+  for (int i = 0; i < trucks2.length; i++) {
+    trucks2[i].show();
+  }
   for (Rect collider : colliders) { //collision detection
     if (frog.collides(collider)) {
       pause = true;
       break;
     }
   }
+  
 }
 
 void keyPressed () {
