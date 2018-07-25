@@ -9,4 +9,10 @@ class Frog extends Rect {
     texture.loadPixels();
     image(texture, this.x, this.y);
   }
+  
+  void move (float dx, float dy) {
+    this.x += dx * grid;
+    this.y += dy * grid;
+  }
+  
 }

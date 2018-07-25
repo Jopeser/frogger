@@ -10,3 +10,16 @@ void setup () {
 void draw () {
 
 }
+
+void keyPressed () {
+  if (keyCode == UP) {
+    frog.move(0, -1);
+    println("§rtz");
+  } else if (keyCode == DOWN) {
+    frog.move(0, 1);
+  } else if (keyCode == RIGHT) {
+    frog.move(1, 0);
+  } else if (keyCode == LEFT) {
+    frog.move(-1, 0);
+  }
+}
