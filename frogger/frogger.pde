@@ -3,7 +3,7 @@ Frog frog;
 Truck truck;
 
 void setup () {
-  size(500, 500); //10*grid
+  size(550, 550); //10*grid
   background(0);
   frog = new Frog();
   truck = new Truck(grid*2, grid*5, -2);

@@ -10,10 +10,17 @@ class Rect {
   }
   
   boolean collides (Rect other) {
+    
     float bottom = y;
     float top = y - h;
     float left = x;
     float right = x + w;
+    
+    float obottom = other.y;
+    float otop = other.y - other.h;
+    float oleft = other.x;
+    float oright = other.x + other.w;
+    
     return false;
   }
   
